@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<main class="main_prod">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'base' %}">Главная</a></li>
+        <li class="breadcrumb-item"><a href="#">{{ product.category.name }}</a></li>
+        <li aria-current="page">{{ product.title }}</li>
+    </ol>
+</nav>
+
+<div>
+    <div>
+        <img src="{{ product.image.url }}" width="150">
+    </div>
+    <div>
+        <h3> {{ product.title }} </h3>
+        <p> Цена: {{ product.price }} руб. </p>
+        <p> Описание: {{ product.description }} </p>
+        <br>
+        <span class="button_cart"><button onclick="window.location.href = '{% url 'add_to_cart' ct_model=ct_model slug=product.slug %}';">В корзину</button></span>
+    </div>
+    <p> Характеристики: </p>
+    <table>
+        <tbody>
+            <tr>
+                <td>Тип</td>
+                <td>{{ product.type }}</td>
+            </tr>
+            <tr>
+                <td>Вид</td>
+                <td>{{ product.category_tea }}</td>
+            </tr>
+            <tr>
+                <td>Сорт</td>
+                <td>{{ product.sort }}</td>
+            </tr>
+            <tr>
+                <td>Страна</td>
+                <td>{{ product.country }}</td>
+            </tr>
+            <tr>
+                <td>Регион</td>
+                <td>{{ product.region }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</main>
+{% endblock content %}

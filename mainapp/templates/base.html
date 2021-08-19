@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Главная страница</title>
+        <link rel="stylesheet" href="{% static 'css/main.css'%}" type="text/css">
+    </head>
+    <body>
+        <header id="header">
+            <img id="img_logo" src="{% static 'media/logo.png' %}" alt="Логотип"> <a id="logo">Магазин китайского чая</a>
+            <nav id="nav1">
+                <span class="dropdown"><button class="dropbtn" onclick="window.location.href = '{% url 'base' %}';">Главная</button></span>
+                <span class="dropdown">
+                    <button class="dropbtn">К а т а л о г</button>
+                    <div class="dropdown-content">
+                        {% for category in categories %}
+                            <a href="{{ category.url }}">{{ category.name }} ({{ category.count }})</a>
+                        {% endfor %}
+                    </div>
+                </span>
+                <span class="dropdown"><button class="dropbtn">Про нас</button></span>
+                <span class="dropdown"><button class="dropbtn">Контакты</button></span>
+                <span class="dropdown"><button class="dropbtn" onclick="window.location.href = '{% url 'cart' %}';">Корзина: <span>{{ cart.products.count }}</span></button></span>
+            </nav>
+        </header>
+        {% block content %}
+        <main class="main">
+            {% for product in products %}
+            <div>
+                <img src="{{ product.image.url }}" alt="" width="200">
+                <br>
+                <div><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></div>
+                <br>
+                <div>Цена: {{ product.price }} руб.</div>
+                <span class="button_cart"><button>В корзину</button></span>
+            </div>
+            {% endfor %}
+        </main>
+        {% endblock content %}
+        <footer id="footer">footer</footer>
+    </body>
+</html>

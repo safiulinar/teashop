@@ -1,0 +1,174 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: rgb(52, 71, 43);
+    background-size: cover;
+}
+
+#header {
+    width: 100%;
+    height: 200px;
+    background: #338622;
+    color: rgb(0, 0, 0);
+    line-height: 5px;
+    float: left;
+    font-size: 50px;
+
+}
+
+#img_logo {
+    height: 75%;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#logo {
+    position: relative;
+    left: 200px;
+    top: -50px;
+}
+
+#nav1 {
+    width: 100%;
+    height: 40px;
+    border: 1px solid silver;
+    background: #80a578;
+}
+
+.main {
+    width: 100%;
+    height: 900px;
+    margin-top: 40px;
+    float: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.main div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.main div img {
+    border-radius: 125px;
+}
+
+.cart_cart {
+    text-align: center
+}
+
+.table {
+    margin-top: 50px;
+}
+
+.tr {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1fr 2fr;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.th {
+    border: 1px solid silver;
+}
+
+.td {
+    border: 1px solid silver;
+    text-align: center;
+}
+
+.button_cart button {
+
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.button_cart button:hover {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    background-color: #3e8e41;
+
+}
+
+#footer {
+    width: 100%;
+    height: 150px;
+    border-bottom: 4px solid silver;
+    background: #338622;
+    color: rgb(0, 0, 0);
+    line-height: 70px;
+    float: left;
+    margin-top: 50px;
+    border-top: 4px solid silver;
+}
+
+ol.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb-item::after {
+    content: "/";
+}
+
+/* Стилизация выпадающей кнопки */
+.dropbtn {
+    background-color: #4CAF50;
+    color: black;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Контейнер <div> - необходимо разместить выпадающий контент */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Выпадающий контент (скрыт по умолчанию) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #4CAF50;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Ссылки внутри выпадающего */
+  .dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+  }
+  
+  /* Изменить цвет выпадающих ссылок при наведении */
+  .dropdown-content a:hover {
+    background-color: #3e8e41;
+    color: #fff;
+   }
+  
+  /* Показать выпадающее меню при наведении */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Изменить цвет фона кнопки выпадающего списка, когда отображается содержимое выпадающего списка. */
+  .dropdown:hover .dropbtn {
+    color: #fff;
+    background-color: #3e8e41;
+  }
