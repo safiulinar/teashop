@@ -12,7 +12,7 @@
             <nav id="nav1">
                 <span class="dropdown"><button class="dropbtn" onclick="window.location.href = '{% url 'base' %}';">Главная</button></span>
                 <span class="dropdown">
-                    <button class="dropbtn">К а т а л о г</button>
+                    <button class="dropbtn">Каталог</button>
                     <div class="dropdown-content">
                         {% for category in categories %}
                             <a href="{{ category.url }}">{{ category.name }} ({{ category.count }})</a>
@@ -30,7 +30,7 @@
             <div>
                 <img src="{{ product.image.url }}" alt="" width="200">
                 <br>
-                <div><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></div>
+                <div><a class="name_product" href="{{ product.get_absolute_url }}">{{ product.title }}</a></div>
                 <br>
                 <div>Цена: {{ product.price }} руб.</div>
                 <span class="button_cart"><button>В корзину</button></span>

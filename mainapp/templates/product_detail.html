@@ -4,15 +4,15 @@
 <main class="main_prod">
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'base' %}">Главная</a></li>
-        <li class="breadcrumb-item"><a href="#">{{ product.category.name }}</a></li>
+        <li class="breadcrumb-item"><a class="name_product" href="{% url 'base' %}">Главная</a></li>
+        <li class="breadcrumb-item"><a class="name_product" href="#">{{ product.category.name }}</a></li>
         <li aria-current="page">{{ product.title }}</li>
     </ol>
 </nav>
 
 <div>
     <div>
-        <img src="{{ product.image.url }}" width="150">
+        <img src="{{ product.image.url }}" width="200">
     </div>
     <div>
         <h3> {{ product.title }} </h3>
