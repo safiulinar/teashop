@@ -1,7 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main class="main">
+    {% for product in category_products %}
+    {% if product.category == category %}
+    <div>
+        <img src="{{ product.image.url }}" alt="" width="200">
+        <br>
+        <div><a href="{{ product.get_absolute_url }}">{{ product.title }}</a></div>
+        <br>
+        <div>Цена: {{ product.price }} руб.</div>
+        <span class="button_cart"><button>В корзину</button></span>
+    </div>
+    {% endif %}
+    {% endfor %}
+</main>
 
-{{ category.name }}
 
 {% endblock content  %}
